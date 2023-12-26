@@ -252,9 +252,9 @@ python3 web_demo.py
 
 在安装 ChatDoc-TPU 之前，请使用 Memory_edit 工具修改当前设备的内存分配，使用方式参考内存分布修改工具栏目
 
-- NPU 7360 MB
-- VPU 2360 MB
-- VPP 4096 MB 
+- NPU 7168 MB
+- VPU 2048 MB
+- VPP 3072 MB 
 
 
 
@@ -485,7 +485,7 @@ python3 main.py
 - 克隆仓库
 
 ```bash
-https://github.com/ZillaRU/EmotiVoice-TPU.git
+git clone https://github.com/ZillaRU/EmotiVoice-TPU.git
 ```
 
 - 下载模型
@@ -669,5 +669,4 @@ cd ..
 streamlit run app.py CH # for ChineseCLIP VIT-B16
 streamlit run app.py EN # for CLIP-VIT-B32 
 ```
-
 
