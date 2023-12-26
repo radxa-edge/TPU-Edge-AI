@@ -203,7 +203,7 @@
 
   #### 信息详解
 
-  **Docker Image **镜像名字，填入会自动在docker hub中拉取镜像
+  **Docker Image** 镜像名字，填入会自动在docker hub中拉取镜像
 
   ```bash
   radxazifeng278/radxa_whisper_app:0.1.0
@@ -253,7 +253,7 @@
   radxazifeng278/radxa_imgsearch_app:0.1.0
   ```
 
-  **Title **App名字，用户自定义
+  **Title**App名字，用户自定义
 
   *Icon URL* App 图标(可选)
 
