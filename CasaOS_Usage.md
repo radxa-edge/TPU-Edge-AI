@@ -88,7 +88,7 @@
   df -h
   ```
 
-  ![image-20231226144013802](/home/zifeng/.config/Typora/typora-user-images/image-20231226144013802.png)
+  ![image-20231226144013802](./sources/img/image-20231226144013802.png)
 
 ​	此时发现 /data 目录下有充足的空间(如有更大的空间请使用更大空间的目录)，此案例使用/data
 
@@ -125,7 +125,7 @@
 
 - 跟随安装引导安装
 
-  ![image-20231226143419553](/home/zifeng/.config/Typora/typora-user-images/image-20231226143419553.png)
+  ![image-20231226143419553](./sources/img/image-20231226143419553.png)
 
   - 如果根目录空间低于 5GB， 仍然能通过输入 1 进行强制安装
 
@@ -133,7 +133,7 @@
 
 - 通过端口 bm1684:81 访问 CasaOS, 首次访问需要创建账户
 
-  ![image-20231226145804564](/home/zifeng/.config/Typora/typora-user-images/image-20231226145804564.png)
+  ![image-20231226145804564](./sources/img/image-20231226145804564.png)
 
   
 
@@ -149,7 +149,7 @@
 
 - 点击 CasaOS App 栏的 "+" 标志，选择 Install a customized app
 
- ![image-20231226163157433](/home/zifeng/.config/Typora/typora-user-images/image-20231226163157433.png)
+ ![image-20231226163157433](./sources/img/image-20231226163157433.png)
 
 
 
@@ -185,7 +185,7 @@
 
   **CPU Shares** CPU能力，建议Medium
 
-  ![radxa stable diffusion CasaOS Install](/home/zifeng/.config/Typora/typora-user-images/image-20231226164050508.png)
+  ![radxa stable diffusion CasaOS Install](./sources/img/image-20231226164050508.png)
 
 
 
@@ -229,7 +229,7 @@
 
   **CPU Shares** CPU能力，建议Medium
 
-  ![image-20231226172135638](/home/zifeng/.config/Typora/typora-user-images/image-20231226172135638.png)
+  ![image-20231226172135638](./sources/img/image-20231226172135638.png)
 
 
 
@@ -273,7 +273,7 @@
 
   **CPU Shares** CPU能力，建议Medium
 
-  ![image-20231226172437819](/home/zifeng/.config/Typora/typora-user-images/image-20231226172437819.png)
+  ![image-20231226172437819](./sources/img/image-20231226172437819.png)
 
 
 
@@ -321,7 +321,7 @@
 
   **CPU Shares** CPU能力，建议High
 
-  ![image-20231226173743410](/home/zifeng/.config/Typora/typora-user-images/image-20231226173743410.png)
+  ![image-20231226173743410](./sources/img/image-20231226173743410.png)
 
 
 
@@ -341,7 +341,7 @@ CasaOS 中App开启状态为 App 图标颜色高亮，关闭状态为 App 图标
 
 卸载 App 单击 Uninstall 即可
 
-![image-20231226175207261](/home/zifeng/.config/Typora/typora-user-images/image-20231226175207261.png)
+![image-20231226175207261](./sources/img/image-20231226175207261.png)
 
 
 
@@ -355,7 +355,7 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
 
 
-![image-20231226173928632](/home/zifeng/.config/Typora/typora-user-images/image-20231226173928632.png)
+![image-20231226173928632](./sources/img/image-20231226173928632.png)
 
 
 
@@ -395,7 +395,7 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
   
 
-  ![image-20231226173955477](/home/zifeng/.config/Typora/typora-user-images/image-20231226173955477.png)
+  ![image-20231226173955477](./sources/img/image-20231226173955477.png)
 
   ***Dockerfile***
 
@@ -421,7 +421,7 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
   App source code with model 层将基于上一 App env 镜像中放入源码与模型从而构建成一个完整的App，并且加入App 启动命令 CMD
 
-  ![image-20231226174018094](/home/zifeng/.config/Typora/typora-user-images/image-20231226174018094.png)
+  ![image-20231226174018094](./sources/img/image-20231226174018094.png)
 
   
 
