@@ -6,20 +6,20 @@
 
 ## 目录
 
-- [Docker 更新方法](#Docker 更新方法)
+- [Docker 更新方法](#Docker-更新方法)
 
-- [Docker 镜像目录迁移](#Docker 镜像目录迁移)
+- [Docker 镜像目录迁移](#Docker-镜像目录迁移)
 
-- [CasaOS 安装](#CasaOS 安装)
+- [CasaOS 安装](#CasaOS-安装)
 
-- [安装 radxa 一键启动大模型 Apps](#安装 radxa 一键启动大模型 Apps)
+- [安装 radxa 一键启动大模型 Apps](#安装-radxa-一键启动大模型-Apps)
 
   - [安装自定义软件](#安装自定义软件)
-  - [安装 radxa stable diffusion 文生图 App](#安装 radxa stable diffusion 文生图 App)
-  - [安装 radxa whisper 语音识别总结 App](#安装 radxa whisper 语音识别总结 App)
-  - [安装 radxa ImageSearch 图片搜索 App](#安装 radxa ImageSearch 图片搜索 App)
-  - [安装 radxa chatdoc 文档聊天 App](#安装 radxa chatdoc 文档聊天 App)
-  - [App 启动与卸载](#App 启动与卸载)
+  - [安装 radxa stable diffusion 文生图 App](#安装-radxa-stable-diffusion-文生图-App)
+  - [安装 radxa whisper 语音识别总结 App](#安装-radxa-whisper-语音识别总结-App)
+  - [安装 radxa ImageSearch 图片搜索 App](#安装-radxa-ImageSearch-图片搜索-App)
+  - [安装 radxa chatdoc 文档聊天 App](#安装-radxa-chatdoc-文档聊天-App)
+  - [App 启动与卸载](#App-启动与卸载)
 
 - [App 构建方法](#App 构建方法)
 
@@ -117,7 +117,7 @@
 
 ## CasaOS 安装
 
-- 安装 CasaOS 需要检查当前的 docker 版本，如版本低于24.0.7需要卸载并更新，BM1684X docker更新方法[可看这里](#Docker 更新方法)
+- 安装 CasaOS 需要检查当前的 docker 版本，如版本低于24.0.7需要卸载并更新，BM1684X docker更新方法[可看这里](#Docker-更新方法)
 
   ```bash
   curl -fsSL https://get.casaos.io | sudo bash
@@ -143,7 +143,7 @@
 
 ## 安装 radxa 一键启动大模型 Apps
 
-这里将介绍如何在CasaOS安装 radxa 大模型 App, CasaOS 中的第三方App 以 docker image的形式进行安装，上传到 CasaOS App store[可参考这里](https://github.com/IceWhaleTech/CasaOS-AppStore/tree/main)，radxa目前已将 Stable Diffusion, whisper, chatdoc, imagesearch 四个大模型App上传至 [docker hub](https://hub.docker.com/u/radxazifeng278)， 更多详细信息清参考[App构建方法](#App构建方法)
+这里将介绍如何在CasaOS安装 radxa 大模型 App, CasaOS 中的第三方App 以 docker image的形式进行安装，上传到 CasaOS App store[可参考这里](https://github.com/IceWhaleTech/CasaOS-AppStore/tree/main)，radxa目前已将 Stable Diffusion, whisper, chatdoc, imagesearch 四个大模型App上传至 [docker hub](https://hub.docker.com/u/radxazifeng278)， 更多详细信息清参考[App 构建方法](#App-构建方法)
 
 ### 安装自定义软件
 
@@ -347,7 +347,7 @@ CasaOS 中App开启状态为 App 图标颜色高亮，关闭状态为 App 图标
 
 ## App 构建方法
 
-在参考Apo构建方法前可先参考 [手动部署应用 ](./AI Example.md#Stable Diffusion-TPU Setup)文档熟悉整个应用部署流程过程与细节。
+在参考Apo构建方法前可先参考 [手动部署应用 ](./AI Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
 
 CasaOS 的第三方应用利用 docker image 创建容器并安装到 CasaOS 中，CasaOS可对容器配置进行设置与管理, 在此之前我们需要准备我们的Docker image且Dockerfile, 这里将以radxa stable diffusion 为例子详细讲述大模型App的 docker image 的构建过程。
 
@@ -444,4 +444,4 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
 
 
-当得到完整的 App 镜像后可参考 [安装 radxa 一键启动大模型 Apps](#安装 radxa 一键启动大模型 Apps) 对自定义 App 在 CasaOS 中进行安装
+当得到完整的 App 镜像后可参考 [安装 radxa 一键启动大模型 Apps](#安装-radxa-一键启动大模型-Apps) 对自定义 App 在 CasaOS 中进行安装
