@@ -21,7 +21,7 @@
   - [安装 radxa chatdoc 文档聊天 App](#安装-radxa-chatdoc-文档聊天-App)
   - [App 启动与卸载](#App-启动与卸载)
 
-- [App 构建方法](#App 构建方法)
+- [App 构建方法](#App-构建方法)
 
   
 
@@ -287,7 +287,7 @@
 
 ### 安装 radxa chatdoc 文档聊天 App
 
-**安装 chatdoc 前必须参考[内存分布修改工具](AI Example.md#内存分布修改工具) 修改BM1684X内存分配**
+**安装 chatdoc 前必须参考[内存分布修改工具](AI-Example.md#内存分布修改工具) 修改BM1684X内存分配**
 
 建议分配 -NPU 7168, -VPU 2048, -VPP 3072
 
@@ -347,7 +347,7 @@ CasaOS 中App开启状态为 App 图标颜色高亮，关闭状态为 App 图标
 
 ## App 构建方法
 
-在参考Apo构建方法前可先参考 [手动部署应用 ](./AI Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
+在参考Apo构建方法前可先参考 [手动部署应用 ](./AI-Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
 
 CasaOS 的第三方应用利用 docker image 创建容器并安装到 CasaOS 中，CasaOS可对容器配置进行设置与管理, 在此之前我们需要准备我们的Docker image且Dockerfile, 这里将以radxa stable diffusion 为例子详细讲述大模型App的 docker image 的构建过程。
 
