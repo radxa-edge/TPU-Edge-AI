@@ -145,6 +145,17 @@
 
 这里将介绍如何在CasaOS安装 radxa 大模型 App, CasaOS 中的第三方App 以 docker image的形式进行安装，上传到 CasaOS App store[可参考这里](https://github.com/IceWhaleTech/CasaOS-AppStore/tree/main)，radxa目前已将 Stable Diffusion, whisper, chatdoc, imagesearch 四个大模型App上传至 [docker hub](https://hub.docker.com/u/radxazifeng278)， 更多详细信息清参考[App 构建方法](#App-构建方法)
 
+
+
+| App                                                          | Docker Image                             | Container port |
+| ------------------------------------------------------------ | ---------------------------------------- | -------------- |
+| [Radxa Stable Diffusion](#安装-radxa stable-diffusion-文生图-App) | radxazifeng278/radxa_sd_app:0.1.0        | 8999           |
+| [Radxa whisper](#安装-radxa-whisper-语音识别总结-App)        | radxazifeng278/radxa_whisper_app:0.1.0   | 7860           |
+| [Radxa ImageSearch](#安装-radxa-ImageSearch-图片搜索-App)    | radxazifeng278/radxa_imgsearch_app:0.1.0 | 8501           |
+| [Radxa chatdoc](#安装-radxa-chatdoc-文档聊天-App)            | radxazifeng278/radxa_chatdoc_app:0.1.0   | 8501           |
+
+
+
 ### 安装自定义软件
 
 - 点击 CasaOS App 栏的 "+" 标志，选择 Install a customized app
@@ -287,7 +298,7 @@
 
 ### 安装 radxa chatdoc 文档聊天 App
 
-**安装 chatdoc 前必须参考[内存分布修改工具](AI-Example.md#内存分布修改工具) 修改BM1684X内存分配**
+**安装 chatdoc 前必须参考[内存分布修改工具](AI_Example.md#内存分布修改工具) 修改BM1684X内存分配**
 
 建议分配 -NPU 7168, -VPU 2048, -VPP 3072
 
@@ -347,9 +358,9 @@ CasaOS 中App开启状态为 App 图标颜色高亮，关闭状态为 App 图标
 
 ## App 构建方法
 
-在参考Apo构建方法前可先参考 [手动部署应用 ](./AI-Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
+在参考Apo构建方法前可先参考 [手动部署应用 ](./AI_Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
 
-CasaOS 的第三方应用利用 docker image 创建容器并安装到 CasaOS 中，CasaOS可对容器配置进行设置与管理, 在此之前我们需要准备我们的Docker image且Dockerfile, 这里将以radxa stable diffusion 为例子详细讲述大模型App的 docker image 的构建过程。
+CasaOS 的第三方应用利用 docker image 创建容器并安装到 CasaOS 中，CasaOS 可对容器配置进行设置与管理, 在此之前我们需要准备我们的Docker image且Dockerfile, 这里将以 radxa stable diffusion 为例子详细讲述大模型 App 的 docker image 的构建过程。
 
 radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式进行拆分构建，每层的构建都是基于上一层，分别是 ubuntu20.04 层， SDK base 层，App env 运行所需环境层，与顶层 App code + model 源码和模型层。
 
@@ -391,7 +402,7 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
 - ### App env 层
 
-  App env 层基于 SDK base镜像基础上添加App运行必须的环境，例如python modules, 和一些特殊需要安装的deb, 拆分此层的目的是后续App源码更新在环境不变的情况下减少安装速度，并且可通过App env + SDK base镜像外部挂载App源码和模型卷可直接启动服务，可在此层加入App
+  App env 层基于 SDK base 镜像基础上添加 App 运行必须的环境，例如 python modules, 和一些特殊需要安装的 deb, 拆分此层的目的是后续 App 源码更新在环境不变的情况下减少安装速度，并且可通过App env + SDK base镜像外部挂载 App 源码和模型卷可直接启动服务，可在此层加入 CMD 默认启动 App 服务
 
   
 
@@ -419,7 +430,7 @@ radxa 大模型 App image 是以ubuntu20.04为基础进行四层layer的方式�
 
 - ### App source code with model 层
 
-  App source code with model 层将基于上一 App env 镜像中放入源码与模型从而构建成一个完整的App，并且加入App 启动命令 CMD
+  App source code with model 层将基于上一 App env 镜像中放入源码与模型从而构建成一个完整的 App，并且加入 App 启动命令 CMD
 
   ![image-20231226174018094](./sources/img/image-20231226174018094.png)
 
