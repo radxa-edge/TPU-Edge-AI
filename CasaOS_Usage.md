@@ -149,7 +149,7 @@
 
 | App                                                          | Docker Image                             | Container port |
 | ------------------------------------------------------------ | ---------------------------------------- | -------------- |
-| [Radxa Stable Diffusion](#安装-radxa stable-diffusion-文生图-App) | radxazifeng278/radxa_sd_app:0.1.0        | 8999           |
+| [Radxa Stable Diffusion](#安装-radxa-stable-diffusion-文生图-App) | radxazifeng278/radxa_sd_app:0.1.0        | 8999           |
 | [Radxa whisper](#安装-radxa-whisper-语音识别总结-App)        | radxazifeng278/radxa_whisper_app:0.1.0   | 7860           |
 | [Radxa ImageSearch](#安装-radxa-ImageSearch-图片搜索-App)    | radxazifeng278/radxa_imgsearch_app:0.1.0 | 8501           |
 | [Radxa chatdoc](#安装-radxa-chatdoc-文档聊天-App)            | radxazifeng278/radxa_chatdoc_app:0.1.0   | 8501           |
