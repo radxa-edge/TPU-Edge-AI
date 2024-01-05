@@ -185,7 +185,7 @@
   **Port** docker容器端口映射，Host端口为 Web UI 指定的端口， **容器端口为 8999**
 
   ```bash
-  89999
+  8999
   ```
 
   **Devices** 设备挂载，将TPU挂载进Docker容器中，建议全部挂载 Host: **/dev**,	Container: **/dev**
