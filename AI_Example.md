@@ -1,19 +1,5 @@
 # AI Example 
 
-> username: radxa
->
-> password: radxa
-
-
-
-## 修改 /data 所有者
-
-```bash
-sudo chown -R radxa /data
-```
-
-
-
 ## 虚拟环境使用
 
 每个应用之间因为依赖包版本可能存在不一致或者版本冲突，所以每个应用应创建一个虚拟环境以安装各自的依赖，保持相互隔离
@@ -116,12 +102,22 @@ Selecting config 'bitmain-bm1684x-sm7m-v1.0'
 
 ## Stable Diffusion-TPU Setup
 
+Stable Diffusion 是一个可以根据文本生产相应场景照片的大模型，目前移植到BM1684X上
+
+- 克隆仓库并切换成 lcm_1.0 tag
+
+```bash
+git clone https://github.com/zifeng-radxa/SD-lcm-tpu.git
+cd SD-lcm-tpu
+git switch lcm_1.0
+```
+
 - 下载 Stable Diffusion 压缩包
 
 ```bash 
-wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/Stable_Diffusion/zip_downloader.sh
+wget https://github.com/zifeng-radxa/SD-lcm-tpu/releases/download/lcm_1.0/zip_downloader.sh
 bash zip_downloader.sh
-unzip Stable_Diffusion-TPU.zip
+unzip models.zip
 ```
 
 得到文件树架构如下
@@ -147,15 +143,12 @@ unzip Stable_Diffusion-TPU.zip
 cd Stable_Diffusion-TPU
 python3 -m virtualenv .venv 
 source .venv/bin/activate
-bash prepare.sh
 ```
 
 - 由于依赖版本的问题，需手动更改  Werkzeug 版本
 
 ```bash
-pip3 list | grep Werkzeug
-pip3 uninstall Werkzeug
-pip3 install Werkzeug==2.2.2
+pip3 install -r re
 ```
 
 - 启动 Web 服务
@@ -175,7 +168,7 @@ bash run.sh
 - 克隆仓库
 
 ```bash
-git clone https://github.com/zhengorange/chatbot.git
+git clone https://github.com/zifeng-radxa/chatbot
 ```
 
 - 下载 chatglm模型，本案例提供三种 chatglm 模型 分别是int8-2048，int8-1024，int4-512
@@ -261,7 +254,7 @@ python3 web_demo.py
 - 克隆仓库
 
 ```bash
-git clone https://github.com/zhengorange/chatdoc.git
+git clone https://github.com/zifeng-radxa/chatdoc
 ```
 
 - 下载 ChatDoc embedding 文件 与 chatglm2-int8-2048 bmodel
@@ -351,7 +344,7 @@ pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 - 克隆仓库，并转到 release 分支
 
 ```bash
-git clone https://github.com/JKay0327/whisper-TPU_py
+git clone https://github.com/zifeng-radxa/whisper-TPU_py
 git checkout -b release origin/release
 ```
 
@@ -441,7 +434,7 @@ audio *必须*  输入的音频文件
 - *在 whisper-TPU_py 同级目录下*
 
 ```bash
-git clone https://github.com/zhengorange/Whisper-WebUI.git
+git clone https://github.com/zifeng-radxa/Whisper-WebUI
 ```
 
 得到文件树架构如下
@@ -457,15 +450,6 @@ git clone https://github.com/zhengorange/Whisper-WebUI.git
 ```bash
 cd Whisper-WebUI
 pip3 install -r requirements.txt
-```
-
-- **在 main.py *start_trans_file* 修改 bmodel 绝对路径 --bmodel_dir**
-
-```python
-def start_trans_file(self, fileobj):
-        file_name = fileobj[0].name
-        current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        console_result = subprocess.run(['bmwhisper', file_name, "--model", "small", "--output_dir", "outputs/" + current_time, "--bmodel_dir", "/data/App/Whisper_App/whisper-TPU_py/bmodel", "--chip_mode", "soc", "--verbose", "False"], capture_output=True, text=True)
 ```
 
 - 启动 Web 服务
@@ -485,7 +469,9 @@ python3 main.py
 - 克隆仓库
 
 ```bash
-git clone https://github.com/ZillaRU/EmotiVoice-TPU.git
+git clone https://github.com/zifeng-radxa/EmotiVoice-TPU
+cd EmotiVoice-TPU
+git checkout -b radxa_v0.1.0 origin/radxa_v0.1.0
 ```
 
 - 下载模型
@@ -556,20 +542,10 @@ source .venv/bin/activate
 ```bash
 wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
-pip3 install torch torchaudio
-pip3 install numpy numba scipy transformers==4.26.1 soundfile yacs g2p_en jieba pypinyin
+pip3 install -r requirements.txt
 ```
 
-- 更改 inference_am_vocoder_joint.py 代码问题
-
-将 from tokenizers import AutoTokenizer 更改为 from transformers import AutoTokenizer
-
-```python
-# from tokenizers import AutoTokenizer
-from transformers import AutoTokenizer
-```
-
-### **CLI 模式运行**
+**CLI 模式运行**
 
 ```bash
 TEXT=data/inference/text
@@ -579,13 +555,7 @@ python3 inference_am_vocoder_joint.py \
 --test_file $TEXT
 ```
 
-### **Web 模式运行**
-
-- 安装依赖 (*在虚拟环境中*)
-
-```bash
-pip3 install streamlit
-```
+**Web 模式运行**
 
 - 启动Web服务
 
@@ -604,7 +574,7 @@ streamlit run demo_page.py
 - 克隆仓库
 
 ```bash ]
-git clone https://github.com/ZillaRU/ImageSearch-tpu
+git clone https://github.com/zifeng-radxa/ImageSearch-tpu
 ```
 
 - 下载 CLIP bmodel
@@ -668,5 +638,82 @@ pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 cd ..
 streamlit run app.py CH # for ChineseCLIP VIT-B16
 streamlit run app.py EN # for CLIP-VIT-B32 
+```
+
+
+
+
+
+## VideoSearch-TPU Setup
+
+- 克隆仓库
+
+```bash
+https://github.com/zifeng-radxa/VideoSearch-tpu/tree/main
+```
+
+- 下载 CLIP bmodels, 将bmodels文件夹复制到VideoSearch-tpu/inference/clip_model/中
+
+ ```bash
+cd VideoSearch-tpu/inference/clip_model/
+wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/ImageSearch/ImageSearch_bmodel.zip
+unzip ImageSearch_bmodel.zip
+
+mv IImageSearch_bmodel/bmodels .
+ ```
+
+- 得到文件结构如下
+
+```bash
+.
+└── VideoSearch-tpu
+    ├── __pycache__
+    ├── dbs
+    │   ├── CH
+    │   ├── EN
+    │   ├── scene_video_index
+    │   ├── scenemetadata_index
+    │   ├── video_scene_index
+    │   └── videometadata_index
+    ├── inference
+    │   ├── __pycache__
+    │   ├── clip
+    │   │   └── __pycache__
+    │   ├── clip_model
+    │   │   ├── __pycache__
+    │   │   ├── bmodels
+    │   │   │   ├── CH
+    │   │   │   └── EN
+    │   │   └── saved_tokenizer
+    │   │       ├── bert_chinese_tokenizer-fast
+    │   │       └── bert_chinese_tokenizer-slow
+    │   └── utils
+    │       └── __pycache__
+    ├── scene_snapshot
+    ├── video_clip
+    └── video_collection
+```
+
+- 创建虚拟环境
+
+```bash
+cd VideoSearch-tpu
+python3 -m virtualenv .venv
+source .venv/bin/activate
+```
+
+- 安装依赖包
+
+```bash
+pip install -r requirements.txt
+wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
+pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
+```
+
+- 启动 Web 服务
+
+```bash
+streamlit run app.py EN 
+# streamlit run app.py CH 
 ```
 
