@@ -102,17 +102,24 @@ Selecting config 'bitmain-bm1684x-sm7m-v1.0'
 
 ## Stable Diffusion-TPU Setup
 
-Stable Diffusion 是一个可以根据文本生产相应场景照片的大模型，目前移植到BM1684X上
+Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前通过sophon SDK 移植到 Radxa BM1684X 系列上进行硬件加速推理
+
+此应用使用 sophon-opencv 作为硬件加速，(推荐)导入sophon-opencv环境变量, 亦可使用 pip源的 python-opencv-headless
+
+```bash
+export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/opt/sophon/sophon-opencv-latest/opencv-python/:$PYTHONPATH
+```
 
 - 克隆仓库并切换成 lcm_1.0 tag
 
 ```bash
 git clone https://github.com/zifeng-radxa/SD-lcm-tpu.git
 cd SD-lcm-tpu
-git switch lcm_1.0
+git checkout -b radxa_v0.1.0 origin/radxa_v0.1.0
 ```
 
-- 下载 Stable Diffusion 压缩包
+- 下载 Stable Diffusion models 压缩包
 
 ```bash 
 wget https://github.com/zifeng-radxa/SD-lcm-tpu/releases/download/lcm_1.0/zip_downloader.sh
@@ -124,40 +131,44 @@ unzip models.zip
 
 ```bash
 .
-└── Stable_Diffusion-TPU
-    ├── dist
-    │   └── assets
-    │       └── svg
-    ├── models
-    │   ├── basic
-    │   │   └── babes20
-    │   └── controlnet
-    ├── sdr
-    │   └── __pycache__
-    └── tokenizer
+├── flagged
+├── models
+│   ├── basic
+│   │   ├── babes20lcm
+│   │   └── wujielcm
+│   ├── controlnet
+│   └── other
+├── sd
+│   └── __pycache__
+├── tokenizer
+├── tokenizerV21
+└── tokenizer_2
 ```
 
 - 配置环境 ***必须创建虚拟环境，否则可能会影响其他应用的正常运行***
 
 ```bash
-cd Stable_Diffusion-TPU
+cd SD-lcm-tpu
 python3 -m virtualenv .venv 
 source .venv/bin/activate
 ```
 
-- 由于依赖版本的问题，需手动更改  Werkzeug 版本
+- 安装依赖
 
 ```bash
-pip3 install -r re
+pip3 install -r requirements.txt
+pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/sophon_arm-3.7.0-py3-none-any.whl
 ```
 
 - 启动 Web 服务
 
 ```bash
-bash run.sh
+python3 gr.py
+# or 
+# bash run.sh
 ```
 
-- 浏览器访问 bm1684x:7019
+- 浏览器访问 bm1684x:8999
 
 
 
@@ -200,7 +211,7 @@ unzip chatglm-int4-512.zip
 └── chatglm-int4-512
 ```
 
-- 修改 config.ini配置文件
+- 根据所选模型修改 config.ini配置文件
 
 ```
 cd chatbot
@@ -243,13 +254,9 @@ python3 web_demo.py
 
 ## ChatDoc-TPU Setup
 
-在安装 ChatDoc-TPU 之前，请使用 Memory_edit 工具修改当前设备的内存分配，使用方式参考内存分布修改工具栏目
+在安装 ChatDoc-TPU 之前，请使用 Memory_edit 工具修改当前设备的内存分配，使用方式参考[内存分布修改工具](#内存分布修改工具)栏目
 
-- NPU 7168 MB
-- VPU 2048 MB
-- VPP 3072 MB 
-
-
+> 推荐 NPU 7168 MB	VPU 2048 MB	VPP 3072 MB 
 
 - 克隆仓库
 
@@ -471,7 +478,7 @@ python3 main.py
 ```bash
 git clone https://github.com/zifeng-radxa/EmotiVoice-TPU
 cd EmotiVoice-TPU
-git checkout -b radxa_v0.1.0 origin/radxa_v0.1.0
+git checkout -b radxa_v0.1.0 origin/radxa_v0.1.1
 ```
 
 - 下载模型
@@ -491,6 +498,7 @@ mv ./EmotiVoice_bmodel/* .
 - 手动生成 ouputs 目录
 
 ```bash
+cd ..
 mkdir -p outputs/prompt_tts_open_source_joint/test_audio/audio/
 ```
 
@@ -540,8 +548,7 @@ source .venv/bin/activate
 - 安装依赖
 
 ```bash
-wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
-pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
+pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 pip3 install -r requirements.txt
 ```
 
@@ -628,8 +635,7 @@ source .venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
-wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
-pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
+pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 ```
 
 - 启动 Web 服务
@@ -706,8 +712,7 @@ source .venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
-wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
-pip3 install ./tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
+pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
 ```
 
 - 启动 Web 服务
