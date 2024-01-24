@@ -111,7 +111,7 @@ export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=/opt/sophon/sophon-opencv-latest/opencv-python/:$PYTHONPATH
 ```
 
-- 克隆仓库并切换成 lcm_1.0 tag
+- 克隆仓库并切换成 radxa_v0.1.0 分支
 
 ```bash
 git clone https://github.com/zifeng-radxa/SD-lcm-tpu.git
@@ -134,8 +134,8 @@ unzip models.zip
 ├── flagged
 ├── models
 │   ├── basic
-│   │   ├── babes20lcm
-│   │   └── wujielcm
+│   │   └── babes20lcm
+│   │  
 │   ├── controlnet
 │   └── other
 ├── sd
@@ -249,6 +249,8 @@ python3 web_demo.py
 ```
 
 - 浏览器访问 bm1684:7860 端口
+
+
 
 
 
@@ -478,7 +480,7 @@ python3 main.py
 ```bash
 git clone https://github.com/zifeng-radxa/EmotiVoice-TPU
 cd EmotiVoice-TPU
-git checkout -b radxa_v0.1.0 origin/radxa_v0.1.1
+git checkout -b radxa_v0.1.1 origin/radxa_v0.1.1
 ```
 
 - 下载模型
