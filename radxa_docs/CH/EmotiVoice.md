@@ -8,68 +8,80 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
     ```bash
     git clone https://github.com/zifeng-radxa/EmotiVoice-TPU
     cd EmotiVoice-TPU
-    git checkout -b radxa_v0.1.1 origin/radxa_v0.1.1
+    git checkout -b radxa_v0.1.1 origin/radxa_v0.1.2
     ```
 
 - 下载模型
 
     ```bash
     cd EmotiVoice-TPU/model_file
-    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/EmotiVoice/EmotiVoice_bmodel.zip
-    unzip EmotiVoice_bmodel.zip
+    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/EmotiVoice/EmotiVoice_bmodels.tar.gz
+    tar -xvf EmotiVoice_bmodels.tar.gz
     ```
 
 - 将 bmodel 放到 EmotiVoice-TPU/model_file 中
 
     ```bash
-    mv ./EmotiVoice_bmodel/* .
+    mv ./EmotiVoice_bmodels/* .
     ```
-
-- 手动生成 ouputs 目录
-
-    ```bash
-    cd ..
-    mkdir -p outputs/prompt_tts_open_source_joint/test_audio/audio/
-    ```
-
   得到文件树架构如下
   
   ```bash
-  .
-  └── EmotiVoice-TPU
-      ├── __pycache__
-      ├── assets
-      │   └── audio
-      ├── cn2an
-      │   └── __pycache__
-      ├── config
-      │   └── joint
-      │       └── __pycache__
-      ├── data
-      │   ├── inference
-      │   └── youdao
-      │       └── text
-      ├── lexicon
-      ├── model_file
-      │   └── simbert-base-chinese
-      ├── models
-      │   ├── __pycache__
-      │   ├── hifigan
-      │   │   └── __pycache__
-      │   └── prompt_tts_modified
-      │       ├── __pycache__
-      │       └── modules
-      │           └── __pycache__
-      ├── outputs
-      │   └── prompt_tts_open_source_joint
-      │       └── test_audio
-      │           └── audio
-      └── text
+   .
+  ├── assets
+  │   └── audio
+  ├── config
+  │   └── __pycache__
+  ├── data
+  │   ├── inference
+  │   └── youdao
+  │       └── text
+  ├── frontend
+  │   ├── __pycache__
+  │   ├── cn2an
+  │   │   └── __pycache__
+  │   └── lexicon
+  ├── model_file
+  │   ├── checkpoints
+  │   │   ├── base_speakers
+  │   │   │   ├── EN
+  │   │   │   └── ZH
+  │   │   └── converter
+  │   ├── converter
+  │   ├── simbert-base-chinese
+  │   └── tts
+  ├── models
+  │   ├── __pycache__
+  │   ├── hifigan
+  │   │   └── __pycache__
+  │   └── prompt_tts_modified
+  │       ├── __pycache__
+  │       └── modules
+  │           └── __pycache__
+  ├── processed
+  │   ├── 11-0-100_JOJuisUHwdBwzxx1
+  │   │   └── wavs
+  │   ├── aa-0-100_cZ4h9uSFcfVGpLbH
+  │   │   └── wavs
+  │   ├── aa_cZ4h9uSFcfVGpLbH
+  │   │   └── wavs
+  │   ├── src-8051_OoJ4upo8cObQYzad
+  │   │   └── wavs
+  │   ├── src-8051_PD41WhiCfhMutBT_^
+  │   │   └── wavs
+  │   └── src-8051_uKXaq015HqJSmJ67
+  │       └── wavs
+  ├── temp
+  └── tone_color_conversion
+      └── __pycache__
+
+
   
   ```
 
 - 创建虚拟环境
 
+  **必须创建虚拟环境，否则可能会影响其他应用的正常运行**， 虚拟环境使用请参考[这里](虚拟环境使用.md)
   ```bash
   python3 -m virtualenv .venv
   source .venv/bin/activate
@@ -82,19 +94,6 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
   pip3 install -r requirements.txt
   ```
 - 启动应用
-  - CLI 模式运行
-  
-     ```bash
-     TEXT=data/inference/text
-     python3 inference_am_vocoder_joint.py \
-     --logdir prompt_tts_open_source_joint \
-     --config_folder config/joint \
-     --test_file $TEXT
-     ```
-
-  - Web 模式运行
-    ```bash
-    streamlit run demo_page.py
-    ```
-
-    浏览器访问 bm1684x:8501 端口
+  ```bash
+  bash run_gr.py
+  ```
