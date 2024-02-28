@@ -1,6 +1,6 @@
 ## ChatDoc-TPU 
 
-ChatDoc-TPU 是一款使用 ChatGLM2 通过 Sophon SDK 移植到 Radxa BM1684X 芯片系列产品上实现本地 TPU 硬件加速推理，并使用 Streamlit 设计成易于用户交互的文件聊天机器人
+ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://github.com/THUDM/ChatGLM2-6B) 模型通过 Sophon SDK 移植到 Radxa BM1684X 芯片系列产品上实现本地 TPU 硬件加速推理，并使用 Streamlit 设计成易于用户交互的文件聊天机器人
 
 - 安装须知
     

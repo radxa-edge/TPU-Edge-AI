@@ -1,7 +1,7 @@
 ## Real-ESRGAN-TPU
 
-Real-ESRGAN-TPU 视频/图片分辨率超分应用，通风使用腾讯实验室开源 Real-ESRGAN 系列模型，使用 Sophon SDK 移植到 radxa BM1684X 系列芯片上，实现本地 TPU 进行硬件加速推理，
-此应用可用于对视频/图片进行分辨率提升达到 2560x1920 画质，并提供多种针对不同场景使用的优化模型，可对真实场景，动漫视频进行针对性优化，并实现真实人面增强还原功能，此应用使用 Gradio 和 Streamlit 实现用户友好交互界面
+Real-ESRGAN-TPU 视频/图片分辨率超分应用，通过使用腾讯ARC实验室开源 [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) 系列模型，使用 Sophon SDK 移植到 radxa BM1684X 系列芯片上，实现本地 TPU 进行硬件加速推理，
+此应用可用于对视频/图片进行分辨率提升达到 2560x1920 画质，并提供多种针对不同场景使用的优化模型，可对真实场景，动漫视频进行针对性优化，并实现真实人面增强 （[GFPGAN](https://github.com/TencentARC/GFPGAN)）还原功能，此应用使用 Gradio 和 Streamlit 实现用户友好交互界面
 
 
 - 克隆仓库

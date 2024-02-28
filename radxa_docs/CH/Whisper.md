@@ -1,6 +1,6 @@
 ## Whisper-TPU
 
-Whisper-TPU 是一款使用 OpenAI 的 Whisper 模型使用 Sophon SDK 将其移植到 Radxa BM1684X 芯片系列产品上，实现使用本地 TPU 进行硬件加速推理，此应用可用于对语音进行快速转文字（STT）， 并在未来接入 ChatGLM2 对语音内容进行理解和翻译。
+Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai/whisper) 模型使用 Sophon SDK 将其移植到 Radxa BM1684X 芯片系列产品上，实现使用本地 TPU 进行硬件加速推理，此应用可用于对语音进行快速转文字（STT）， 并在未来接入 ChatGLM2 对语音内容进行理解和翻译。
 此应用使用 Gradio 实现友好用户交互界面
 
 - 克隆仓库，并转到 release 分支

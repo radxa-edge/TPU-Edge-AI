@@ -350,7 +350,7 @@ CasaOS 中 App 开启状态为 App 图标颜色高亮，关闭状态为 App 图�
 
 ### App 构建方法
 
-在参考Apo构建方法前可先参考 [手动部署应用 ](./AI_Example.md#Stable-Diffusion-TPU-Setup)文档熟悉整个应用部署流程过程与细节。
+在参考Apo构建方法前可先参考 [手动部署应用 ](Stable_Diffusion.md)文档熟悉整个应用部署流程过程与细节。
 
 CasaOS 的第三方应用利用 docker image 创建容器并安装到 CasaOS 中，CasaOS 可对容器配置进行设置与管理, 在此之前我们需要准备我们的 Docker image 且 Dockerfile, 这里将以 radxa stable diffusion 为例子详细讲述大模型 App 的 docker image 的构建过程。
 
