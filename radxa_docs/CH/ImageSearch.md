@@ -1,6 +1,6 @@
 ## ImageSearch-TPU 
 
-ImageSearch-TPU 是使用 Image CLIP 模型通过 Sophon SDK 移植到 radxa BM1684X 芯片系列产品上，实现本地 TPU 硬件加速推理，
+ImageSearch-TPU 文本搜索图片，是使用 Image CLIP 模型通过 Sophon SDK 移植到 radxa BM1684X 芯片系列产品上，实现本地 TPU 硬件加速推理，
 可对大量已有图片基础下通过文字对图片库进行快搜索，并使用 Streamlit 实现用户友好交互界面
 
 - 克隆仓库
