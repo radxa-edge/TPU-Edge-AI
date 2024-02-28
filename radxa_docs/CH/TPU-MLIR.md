@@ -10,7 +10,7 @@
     - [生成 bmodel](#生成-bmodel)
         - [MLIR 生成 F32 bmodel](#MLIR-生成-F32-bmodel)
         - [MLIR 生成 F16 bmodel](#MLIR-生成-F16-bmodel)
-        - [MLIR 生成 INT8 bmodel](#MLIR 生成 INT8 bmodel)
+        - [MLIR 生成 INT8 bmodel](#MLIR-生成-INT8-bmodel)
         - [编译为 INT8 非对称量化模型](#编译为-INT8-非对称量化模型)
         - [编译为混合精度模型](#编译为混合精度模型)
       

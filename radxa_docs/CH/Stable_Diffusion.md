@@ -1,6 +1,6 @@
 ## Stable Diffusion-TPU 
 
-Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前通过 sophon SDK 移植到 Radxa BM1684X 系列上进行硬件加速推理，实现离线部署
+Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前通过 sophon SDK 移植到 Radxa BM1684X 系列上进行 TPU 硬件加速推理，实现离线部署，并使用 Gradio 实现用户交互
 
 
 - 克隆仓库并切换成 radxa_v0.1.0 分支
@@ -11,30 +11,29 @@ Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式
     git checkout -b radxa_v0.1.0 origin/radxa_v0.1.0
     ```
 
-  - 下载 Stable Diffusion models 压缩包
+- 下载 Stable Diffusion models 压缩包
+    ```bash 
+    wget https://github.com/zifeng-radxa/SD-lcm-tpu/releases/download/lcm_1.0/zip_downloader.sh
+    bash zip_downloader.sh
+    unzip models.zip
+    ```
 
-      ```bash 
-      wget https://github.com/zifeng-radxa/SD-lcm-tpu/releases/download/lcm_1.0/zip_downloader.sh
-      bash zip_downloader.sh
-      unzip models.zip
-      ```
-
-      得到文件树架构如下
+    得到文件树架构如下
     
-      ```bash
-    ├── flagged
-    ├── models
-    │   ├── basic
-    │   │   └── babes20lcm
-    │   │  
-    │   ├── controlnet
-    │   └── other
-    ├── sd
-    │   └── __pycache__
-    ├── tokenizer
-    ├── tokenizerV21
-    └── tokenizer_2
-      ```
+    ```bash
+  ├── flagged
+  ├── models
+  │   ├── basic
+  │   │   └── babes20lcm
+  │   │  
+  │   ├── controlnet
+  │   └── other
+  ├── sd
+  │   └── __pycache__
+  ├── tokenizer
+  ├── tokenizerV21
+  └── tokenizer_2
+    ```
 
 - 配置环境 
 
