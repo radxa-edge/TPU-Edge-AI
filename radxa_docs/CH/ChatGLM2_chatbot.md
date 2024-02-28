@@ -1,6 +1,6 @@
 ## ChatBot-TPU 
 
-ChatBot-TPU 是使用 Sophon SDK 将 ChatGLM2 移植到 radxa BM1684X 系列产品上， 使其能利用 TPU 进行硬件加速推理，并使用 Gradio 设计成聊天机器人, 用户可以向其询问一些实际问题，实现离线部署 
+ChatBot-TPU 是使用 Sophon SDK 将 ChatGLM2 移植到 radxa BM1684X 系列产品上， 使其能利用本地 TPU 进行硬件加速推理，并使用 Gradio 设计成聊天机器人, 用户可以向其询问一些实际问题
 
 - 克隆仓库
 
