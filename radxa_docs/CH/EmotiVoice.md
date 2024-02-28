@@ -93,6 +93,14 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
   pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
   pip3 install -r requirements.txt
   ```
+- 手动安装 silero-vad
+  ```bash
+  cd ~/.cache/torch/hub/
+  wget https://github.com/snakers4/silero-vad/archive/refs/tags/v4.0.zip
+  unzip v4.0.zip 
+  mv silero-vad-4.0 snakers4_silero-vad_master
+  ```
+
 - 启动应用
   ```bash
   bash run_gr.py
