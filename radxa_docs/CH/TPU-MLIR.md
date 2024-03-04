@@ -251,6 +251,7 @@ $ model_deploy.py \
         --model ../yolov5s.onnx \
         --output dog_onnx.jpg
     ```
+    ![](../asset/dog_onnx.jpg)
 
 - f32 bmodel 的执行方式如下, 得到 dog_f32.jpg:
 
@@ -260,6 +261,7 @@ $ model_deploy.py \
         --model yolov5s_1684x_f32.bmodel \
         --output dog_f32.jpg
     ```
+    ![](../asset/dog_f32.jpg)
 
 
 
@@ -271,6 +273,7 @@ $ model_deploy.py \
         --model yolov5s_1684x_f16.bmodel \
         --output dog_f16.jpg
     ```
+    ![](../asset/dog_f16.jpg)
 
 
 
@@ -282,6 +285,7 @@ $ model_deploy.py \
         --model yolov5s_1684x_int8_sym.bmodel \
         --output dog_int8_sym.jpg
     ```
+    ![](../asset//dog_int8_sym.jpg)
 
 - int8 非对称 bmodel 的执行方式如下, 得到 dog_int8_asym.jpg :
 
@@ -291,6 +295,7 @@ $ model_deploy.py \
         --model yolov5s_1684x_int8_asym.bmodel \
         --output dog_int8_asym.jpg
     ```
+    ![](../asset/dog_int8_asym.jpg)
 
 - 混合精度 bmodel 的执行方式如下, 得到 dog_mix.jpg :
 
@@ -300,31 +305,7 @@ $ model_deploy.py \
         --model yolov5s_1684x_fb16.bmodel \
         --output dog_fb16.jpg
     ```
-
-
-
-### 结果比较
-
-- ONNX
-    ![](../asset/dog_onnx.jpg)
-
-- F32
-    ![](../asset/dog_f32.jpg)
-
-- F16
-
-    ![](../asset/dog_f16.jpg)
-
-- INT8 对称
-
-    ![](../asset//dog_int8_sym.jpg)
-
-- INT8 非对称
-
-    ![](../asset/dog_int8_asym.jpg)
-
-- Mix 混合精度
-
     ![](../asset/dog_fb16.jpg)
+
 
 
