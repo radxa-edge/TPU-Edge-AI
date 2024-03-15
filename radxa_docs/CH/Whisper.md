@@ -6,10 +6,9 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
 - 克隆仓库，并转到 release 分支
 
     ```bash
-    git clone https://github.com/zifeng-radxa/whisper-TPU_py
-    git checkout -b release origin/release
+    git clone https://github.com/zifeng-radxa/whisper-TPU_py -b release
     ```
-
+    
 - 下载 whisper bmodel 
 
     ```bash
@@ -22,7 +21,7 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
 - 将下载的 whisper bmodel 放入 whisper-TPU_py/bmodel 中
 
     ```bash
-    mv Whisper_bmodel/bmodel/* ./bmodel
+    mv Whisper_bmodel/bmodel/ .
     ```
 
 - 在 whisper-TPU_py 同级目录下载 chatglm-int8-1024 
@@ -37,38 +36,27 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
     得到文件树架构如下
     
     ```bash
-    .
     ├── chatglm-int8-1024
     └── whisper-TPU_py
+        ├── Whisper_bmodel
         ├── bmodel
         ├── bmwhisper
-        │   ├── __pycache__
         │   ├── assets
         │   ├── normalizers
         │   └── third_party
         │       └── untpu
         │           └── lib
-        ├── build
-        │   ├── bdist.linux-aarch64
-        │   └── lib
-        │       └── bmwhisper
-        │           ├── assets
-        │           ├── normalizers
-        │           └── third_party
-        │               └── untpu
-        │                   └── lib
-        ├── dist
-        ├── sophon_whisper.egg-info
         └── test
-    
     ```
-
+    
 - 配置虚拟环境
 
     **必须创建虚拟环境，否则可能会影响其他应用的正常运行**， 虚拟环境使用请参考[这里](虚拟环境使用.md)
     ```bash
+    cd whisper-TPU_py
     python3 -m virtualenv .venv 
     source .venv/bin/activate
+    pip3 install --upgrade pip
     pip3 install -r requirements.txt 
     python3 setup.py install
     ```
@@ -118,6 +106,6 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
   - 启动 Web 服务
   ```bash
   python3 main.py
-    ```
+  ```
 
   - 浏览器访问端口 bm1684x:7860
