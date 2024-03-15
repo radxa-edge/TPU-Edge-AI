@@ -12,10 +12,10 @@ ImageSearch-TPU 文本搜索图片，是使用 Image CLIP 模型通过 Sophon SD
 - 下载 CLIP bmodel
 
      ```bahs
-    cd clip_image_search/clip
+    cd ImageSearch-tpu/clip_image_search/clip
     wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/ImageSearch/ImageSearch_bmodel.zip
     unzip ImageSearch_bmodel.zip
-     ```
+    ```
 
     将 bmodel 放到 ImageSearch_bmodel/bmodels/ 中
     
@@ -59,13 +59,13 @@ ImageSearch-TPU 文本搜索图片，是使用 Image CLIP 模型通过 Sophon SD
 
 - 安装依赖包
     ```bash
+    pip3 install --upgrade pip
     pip3 install -r requirements.txt
     pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
     ```
-
+    
 - 启动 Web 服务
     ```bash
-    cd ..
-    streamlit run app.py CH # for ChineseCLIP VIT-B16
     streamlit run app.py EN # for CLIP-VIT-B32 
+    streamlit run app.py CH # for ChineseCLIP VIT-B16
     ```
