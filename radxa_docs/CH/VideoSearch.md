@@ -11,7 +11,7 @@ VideoSearch-TPU 文本搜索视频内容，是通过 Image CLIP 模型使用 Sop
 
 - 下载 CLIP bmodels, 将 bmodels 文件夹复制到 VideoSearch-tpu/inference/clip_model/ 中
      ```bash
-    cd cd -tpu/inference/clip_model/
+    cd VideoSearch-tpu/inference/clip_model/
     rm -rf ./bmodels
     wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/ImageSearch/ImageSearch_bmodel.zip
     unzip ImageSearch_bmodel.zip
