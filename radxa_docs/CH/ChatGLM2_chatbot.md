@@ -38,7 +38,7 @@ ChatBot-TPU 是使用 Sophon SDK 将清华大学 KEG 实验室开源 [ChatGLM2](
     ```
 
 - 根据所选模型修改 config.ini配置文件
-    
+  
     ```
     cd chatbot
     vim config.ini
@@ -64,9 +64,10 @@ ChatBot-TPU 是使用 Sophon SDK 将清华大学 KEG 实验室开源 [ChatGLM2](
 
 - 安装依赖包
     ```bash
+    pip3 install --upgrade pip
     pip3 install -r requirements.txt
     ```
-
+    
 - 导入环境变量
     ```bash
     export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
