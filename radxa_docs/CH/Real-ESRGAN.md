@@ -18,13 +18,19 @@ Real-ESRGAN-TPU 视频/图片分辨率超分应用，通过使用腾讯ARC实验
 
 - 创建虚拟环境
 
-    **必须创建虚拟环境，否则可能会影响其他应用的正常运行**， 虚拟环境使用请参考[这里](虚拟环境使用.md)
+  **必须创建虚拟环境，否则可能会影响其他应用的正常运行**， 虚拟环境使用请参考[这里](虚拟环境使用.md)
   ```bash
-  pip3 install basicsr -i https://pypi.python.org/simple
+  python3 -m virtualenv .venv
+  source .venv/bin/activate
+  ```
+- 下载依赖
+  ```bash
+  pip3 install --upgrade pip setuptools wheel
+  pip3 install basicsr --use-pep517
   pip3 install -r requirements.txt
   pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
   ```
-
+  
 - 下载模型
 
   ```bash
