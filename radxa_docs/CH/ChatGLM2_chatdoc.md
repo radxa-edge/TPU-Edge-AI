@@ -15,9 +15,9 @@ ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://gith
 - 下载 ChatDoc embedding 文件 与 chatglm2-int8-2048 bmodel
 
     ```bash
-    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/zip_downloader.sh
-    bash zip_downloader.sh
-    unzip chatglm-int8-2048.zip
+    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/tar_downloader.sh
+    bash tar_downloader.sh
+    tar -xvf chatglm-int8-2048.tar.gz
     ```
 
     ```bash
@@ -73,7 +73,7 @@ ChatDoc-TPU 是一款将清华大学 KEG 实验室开源 [ChatGLM2](https://gith
 
 - 启动 Web 服务
 
-  - TPU embedding 模式启动（占用更多 TPU 内存）
+  - （推荐）TPU embedding 模式启动（占用更多 TPU 内存）
     ```bash
     bash run_emb_tpu.sh
     ```

@@ -68,7 +68,7 @@ EmotiVoice-TPU 是一款使用网易开源 [EmotiVoice](https://github.com/netea
 - 手动安装 silero-vad
   ```bash
   cd ~/.cache/torch/hub/
-  # 如果不存在此文件夹，请手动创建
+  # 如果不存在此文件夹，请在 ~/.cache 目录中手动创建
   # mkdir -p torch/hub 
   wget https://github.com/snakers4/silero-vad/archive/refs/tags/v4.0.zip
   unzip v4.0.zip 

@@ -1,17 +1,15 @@
 ## Stable Diffusion-TPU 
 
 Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前使用 [StableDifussion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) 
-开源模型通过 sophon SDK 移植到 Radxa BM1684X 系列上进行本地 TPU 硬件加速推理，结合LCM与LoRa实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
+开源模型通过 sophon SDK 移植到 Radxa BM1684X 系列上进行本地 TPU 硬件加速推理，结合 LCM 与 风格 LoRa 实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
 
 
-- 克隆仓库并切换成 radxa_v0.1.0 分支
+- 克隆仓库并切换成 radxa_v0.2.0 分支
 
     ```bash
-    git clone https://github.com/zifeng-radxa/SD-lcm-tpu.git
-    cd SD-lcm-tpu
-    git checkout -b radxa_v0.1.0 origin/radxa_v0.1.0
+    git clone https://github.com/zifeng-radxa/SD-lcm-tpu.git -b radxa_v0.2.0
     ```
-
+    
 - 下载 Stable Diffusion models 压缩包
     ```bash 
     wget https://github.com/zifeng-radxa/SD-lcm-tpu/releases/download/lcm_1.0/zip_downloader.sh
@@ -34,7 +32,7 @@ Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式
   ├── tokenizer
   ├── tokenizerV21
   └── tokenizer_2
-    ```
+  ```
 
 - 配置环境 
 
@@ -48,26 +46,13 @@ Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式
 - 安装依赖
 
     ```bash
+    pip3 install --upgrade pip
     pip3 install -r requirements.txt
-    pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/sophon_arm-3.7.0-py3-none-any.whl
     ```
-
-- 导入环境变量
-    ```bash
-    export LD_LIBRARY_PATH=/opt/sophon/libsophon-current/lib:$LD_LIBRARY_PATH
-    ```
-  （推荐）此应用使用 sophon-opencv 作为硬件加速，需要导入 sophon-opencv 环境变量, 亦可使用 pip3 源的 python-opencv-headless
-  ```bash
-  export PYTHONPATH=/opt/sophon/sophon-opencv-latest/opencv-python/:$PYTHONPATH
-  ```
-
-
+    
 - 启动 Web 服务
-
     ```bash
-    python3 gr.py
-    # or 
-    # bash run.sh
+    bash run.sh
     ```
 
 - 浏览器访问 bm1684x:8999
