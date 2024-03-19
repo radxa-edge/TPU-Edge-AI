@@ -5,7 +5,7 @@ VideoSearch-TPU is an application that allows text-based searching of video cont
 - Clone the repository:
 
   ```bash
-  https://github.com/zifeng-radxa/VideoSearch-tpu/tree/main
+  git clone https://github.com/zifeng-radxa/VideoSearch-tpu/tree/main
   ```
 
 - Download CLIP bmodels, and copy the `bmodels` folder to `VideoSearch-tpu/inference/clip_model/`:
