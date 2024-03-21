@@ -25,8 +25,7 @@ Stable Diffusion is a generative large model that can generate scene photos base
   Users can also compile any stable_diffusion v1.5 checkpoints using model_export.py with [TPU-MLIR](TPU-MLIR). For details, please refer to [model_export/README.md](https://github.com/zifeng-radxa/SD-lcm-tpu/blob/radxa_v0.2.0/model_export/README.md)
 
   Only awportrait.tar.gz contains VAE. If needed, please download VAE separately and refer to model_path.py for modification of each model's path.
-
-    ```bash
+  ```bash 
   cd SD-lcm-tpu 
   mkdir -p models/basic & cd models/basic
   
@@ -34,35 +33,35 @@ Stable Diffusion is a generative large model that can generate scene photos base
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/awportrait/tar_downloader.sh
   bash tar_downloader.sh
   tar -xvf awportrait.tar.gz
-  
+    
   # majicMIX_realistic
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/majicMIX_realistic/tar_downloader.sh
   bash tar_downloader.sh
   tar -xvf majicMIX_realistic.tar.gz
-  
+    
   # majicMIX_fantasy
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/majicMIX_fantasy/tar_downloader.sh
   bash tar_downloader.sh
   tar -xvf majicMIX_fantasy.tar.gz
-  
+    
   # majicMIX_lux
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/majicMIX_lux/tar_downloader.sh
   bash tar_downloader.sh
   tar -xvf majicMIX_lux.tar.gz
-  
+    
   # RealCartoon2.5D
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/RealCartoon2.5D/tar_downloader.sh
   bash tar_downloader.sh
   tar -xvf RealCartoon2.5D.tar.gz
-  
+    
   # vae only
   wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/vae/vae.tar.gz
   tar -xvf vae.tar.gz
-    ```
+  ```
 
   The resulting file tree structure is as follows:
 
-```bash
+    ```bash
     .
     ├── __pycache__
     ├── model_export
@@ -74,7 +73,7 @@ Stable Diffusion is a generative large model that can generate scene photos base
     │   └── __pycache__
     ├── tokenizer
     └── tokenizer_2
-```
+    ```
 
 - Set up the environment.
 
