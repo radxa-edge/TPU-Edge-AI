@@ -111,17 +111,17 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
         ```bash
       cd Whisper-WebUI
         pip3 install -r requirements.txt
-        ```
+      ```
     
     - 在 config.ini 中配置要选用的 chatglm2 模型路径, 默认  chatglm2-int8-1024
 
-    ```ini
-    [llm_model]
-    libtpuchat_path = ../chatglm-int8-1024/libtpuchat.so
-    bmodel_path = ../chatglm-int8-1024/w8a16_chatglm2-6b_1024.bmodel
-    token_path = ../chatglm-int8-1024/tokenizer.model
-    ```
-  
+        ```ini
+        [llm_model]
+        libtpuchat_path = ../chatglm-int8-1024/libtpuchat.so
+        bmodel_path = ../chatglm-int8-1024/w8a16_chatglm2-6b_1024.bmodel
+        token_path = ../chatglm-int8-1024/tokenizer.model
+        ```
+    
   - 启动 Web 服务
       ```bash
       python3 main.py
