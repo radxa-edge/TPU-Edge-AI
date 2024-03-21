@@ -21,12 +21,20 @@ Real-ESRGAN-TPU is an application for video/image resolution super-resolution us
   **It is essential to create a virtual environment to avoid potential conflicts with other applications.** For instructions on using a virtual environment, refer to [this guide](Virtualenv_usage.md).
 
   ```bash
-  pip3 install basicsr -i https://pypi.python.org/simple
+  python3 -m virtualenv .venv
+  source .venv/bin/activate
+  ```
+  
+- Install dependencies
+
+  ```bash
+  pip3 install --upgrade pip setuptools wheel
+  pip3 install basicsr --use-pep517
   pip3 install -r requirements.txt
   pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
   ```
 
-- Download models:
+- Download models
 
   ```bash
   python3 download_models.py

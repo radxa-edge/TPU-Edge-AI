@@ -14,7 +14,7 @@ ImageSearch-TPU is an application that allows text-based searching of images. It
     cd clip_image_search/clip
     wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/ImageSearch/ImageSearch_bmodel.zip
     unzip ImageSearch_bmodel.zip
-     ```
+    ```
 
     Move the `bmodel` to `ImageSearch_bmodel/bmodels/`:
 
@@ -60,6 +60,7 @@ ImageSearch-TPU is an application that allows text-based searching of images. It
 - Install dependencies:
 
     ```bash
+    pip3 install --upgrade pip
     pip3 install -r requirements.txt
     pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
     ```
@@ -67,7 +68,6 @@ ImageSearch-TPU is an application that allows text-based searching of images. It
 - Start the web service:
 
     ```bash
-    cd ..
     streamlit run app.py CH # for ChineseCLIP VIT-B16
     streamlit run app.py EN # for CLIP-VIT-B32 
     ```

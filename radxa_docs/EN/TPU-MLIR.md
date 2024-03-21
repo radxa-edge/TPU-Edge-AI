@@ -67,8 +67,8 @@ In this example, [yolov5s.onnx](https://github.com/ultralytics/yolov5/releases/d
 - ONNX to MLIR
 
     If the model takes image inputs, we need to understand the model's preprocessing before conversion. 
-If the model takes preprocessed npz files as inputs, preprocessing is not necessary. 
-For the official YOLOv5s model, the input images are in RGB format, and each value is multiplied by 1/255. The mean and scale values are `0.0,0.0,0.0` and `0.0039216,0.0039216,0.0039216` respectively.
+  If the model takes preprocessed npz files as inputs, preprocessing is not necessary. 
+  For the official YOLOv5s model, the input images are in RGB format, and each value is multiplied by 1/255. The mean and scale values are `0.0,0.0,0.0` and `0.0039216,0.0039216,0.0039216` respectively.
 
   The model conversion command is as follows:
   ```bash

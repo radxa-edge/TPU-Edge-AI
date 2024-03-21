@@ -44,7 +44,7 @@ ChatBot-TPU 是使用 Sophon SDK 将清华大学 KEG 实验室开源 [ChatGLM2](
     vim config.ini
     ```
     
-    ```bash
+    ```ini
     [llm_model]
     libtpuchat_path = ../chatglm-int4-512/libtpuchat.so
     bmodel_path = ../chatglm-int4-512/chatglm2-6b_512_int4.bmodel

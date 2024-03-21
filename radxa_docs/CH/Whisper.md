@@ -30,9 +30,20 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
     
     ```bash
     cd ..
+    # ChatGLM2-int8-1024
     wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-1024/tar_downloader.sh
     bash tar_downloader.sh
     tar chatglm-int8-1024.tar.gz
+    
+    # ChatGLM2-int4-512
+    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int4-512/tar_downloader.sh
+    bash tar_downloader.sh
+    tar chatglm-int4-512.tar.gz
+    
+    # ChatGLM2-int8-2048
+    wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/tar_downloader.sh
+    bash tar_downloader.sh
+    tar chatglm-int8-2048.tar.gz
     ```
     
     得到文件树架构如下
@@ -73,15 +84,13 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
     
     参数解释
     
-    audio *必须*  输入的音频文件
+    - `audio` （必须）输入的音频文件
     
-    --model 选择模型 [base, small, medium]
+    - `--model` 选择模型 [base, small, medium]
     
-    --bmodel_dir 指定 bmodel 目录
+    - `--bmodel_dir` 指定 bmodel 目录
     
-    --chip_mode 运行平台模式 [soc, pcie]
-
-
+    - `--chip_mode` 运行平台模式 [soc, pcie]
 
 - Web 模式运行
 
@@ -93,22 +102,20 @@ Whisper-TPU 是一款使用 OpenAI 开源的 [Whisper](https://github.com/openai
 
     	得到文件树架构如下
     
-            ```bash
             ├── Whisper-WebUI
             ├── chatglm-int8-1024
             └── whisper-TPU_py
-            ```
-
+        
     - 在 whisper-TPU_py 的 **虚拟环境** .venv 中下载 gradio
 
         ```bash
-        cd Whisper-WebUI
+      cd Whisper-WebUI
         pip3 install -r requirements.txt
         ```
+    
+    - 在 config.ini 中配置要选用的 chatglm2 模型路径, 默认  chatglm2-int8-1024
 
-  - 在 config.ini 中配置要选用的 chatglm2 模型路径, 默认  chatglm2-int8-1024
-  
-    ```bash
+    ```ini
     [llm_model]
     libtpuchat_path = ../chatglm-int8-1024/libtpuchat.so
     bmodel_path = ../chatglm-int8-1024/w8a16_chatglm2-6b_1024.bmodel

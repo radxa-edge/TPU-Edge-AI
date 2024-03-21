@@ -16,9 +16,9 @@ ChatDoc-TPU is an application that uses the Sophon SDK to port the open-source [
 - Download ChatDoc embedding files and the `chatglm2-int8-2048` bmodel:
 
   ```bash
-  wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/zip_downloader.sh
-  bash zip_downloader.sh
-  unzip chatglm-int8-2048.zip
+  wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/tar_downloader.sh
+  bash tar_downloader.sh
+  tar -xvf chatglm-int8-2048.tar.gz
   ```
 
   ```bash
@@ -38,44 +38,43 @@ ChatDoc-TPU is an application that uses the Sophon SDK to port the open-source [
   ```bash
   .
   ├── chatdoc
-  │   ├── data
-  │   │   ├── db
-  │   │   └── uploaded
-  │   ├── embedding
-  │   │   └── 1_Pooling
-  │   ├── embedding_tpu
-  │   │   ├── __pycache__
-  │   │   └── text2vec
-  │   │       ├── __pycache__
-  │   │       ├── model_file
-  │   │       ├── tokenizer_cache
-  │   │       └── utils
-  │   │           └── __pycache__
-  │   └── static
+  │   ├── data
+  │   │   ├── db
+  │   │   └── uploaded
+  │   ├── embedding
+  │   │   └── 1_Pooling
+  │   ├── embedding_tpu
+  │   │   ├── __pycache__
+  │   │   └── text2vec
+  │   │       ├── __pycache__
+  │   │       ├── model_file
+  │   │       ├── tokenizer_cache
+  │   │       └── utils
+  │   │           └── __pycache__
+  │   └── static
   └── chatglm-int8-2048
-  
   ```
-
+  
 - Create a virtual environment.
 
   **It is essential to create a virtual environment to avoid potential conflicts with other applications.** For instructions on using a virtual environment, refer to [this guide](虚拟环境使用.md).
 
   ```bash
-  cd chatdoc
   python3 -m virtualenv .venv
   source .venv/bin/activate
   ```
-
+  
 - Install dependencies:
 
   ```bash
+  pip3 install --upgrade pip
   pip3 install -r requirements.txt 
   pip3 install https://github.com/radxa-edge/TPU-Edge-AI/releases/download/v0.1.0/tpu_perf-1.2.31-py3-none-manylinux2014_aarch64.whl
   ```
 
 - Start the web service:
 
-  - TPU embedding mode (uses more TPU memory):
+  - (Recommend) TPU embedding mode (uses more TPU memory):
 
     ```bash
     bash run_emb_tpu.sh

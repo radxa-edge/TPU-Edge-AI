@@ -12,19 +12,19 @@ ChatBot-TPU is an application that uses the Sophon SDK to port the open-source [
 
   ```bash
   # chatglm-int4-512
-  wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int4-512/zip_downloader.sh
-  bash zip_downloader.sh
-  unzip chatglm-int4-512.zip
+  wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int4-512/tar_downloader.sh
+  bash tar_downloader.sh
+  tar -xvf chatglm-int4-512.tar.gz
 
   # chatglem-int8-1024
-  # wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-1024/zip_downloader.sh
-  # bash zip_downloader.sh
-  # unzip chatglm-int8-1024.zip
+  # wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-1024/tar_downloader.sh
+  # bash tar_downloader.sh
+  # tar -xvf chatglm-int8-1024.tar.gz
 
   # chatglm-int8-2048
-  # wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/zip_downloader.sh
-  # bash zip_downloader.sh
-  # unzip chatglm-int8-2048.zip
+  # wget https://github.com/radxa-edge/TPU-Edge-AI/releases/download/chatglm-int8-2048/tar_downloader.sh
+  # bash tar_downloader.sh
+  # tar -xvf chatglm-int8-2048.tar.gz
   ```
 
   The file tree structure should look like this:
@@ -63,6 +63,7 @@ ChatBot-TPU is an application that uses the Sophon SDK to port the open-source [
 - Install dependencies:
 
   ```bash
+  pip3 install --upgrade pip
   pip3 install -r requirements.txt
   ```
 

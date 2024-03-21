@@ -21,15 +21,15 @@ sudo reboot
 
 ### 参数解析
 
--p [dts name] 查看当前设备 TPU 内存分布状态
+- `-p [dts name]` 查看当前设备 TPU 内存分布状态
 
--c [dts name] 修改 TPU 内存 
+- `-c [dts name]` 修改 TPU 内存 
 
-​	-npu 修改 npu 内存
+	- `-npu `修改 npu 内存
 
-​	-vpp 修改 vpp 内存
+	- `-vpp` 修改 vpp 内存
 
-​	-vpu 修改 vpu 内存
+	- `-vpu` 修改 vpu 内存
 
 ### 使用例子
 
