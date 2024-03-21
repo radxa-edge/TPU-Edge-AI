@@ -1,7 +1,7 @@
 ## Stable Diffusion-TPU 
 
 Stable Diffusion 是一个可以根据文本生成相应场景照片的生成式大模型，目前使用 [StableDifussion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) 
-开源模型通过 sophon SDK 移植到 Radxa BM1684X 芯片系列产品上进行本地 TPU 硬件加速推理，结合 LCM Lora加速模块与风格 LoRa 实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
+开源模型通过 sophon SDK 移植到 Radxa BM1684X 芯片系列产品上进行本地 TPU 硬件加速推理，结合 LCM Lora 加速模块与风格 LoRa 实现快速推理生成特色风格图片，并使用 Gradio 实现用户交互
 
 
 - 克隆仓库并切换成 radxa_v0.2.0 分支
