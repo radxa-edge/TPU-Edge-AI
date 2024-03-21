@@ -107,6 +107,7 @@
   ```
 
 
+
 ### CasaOS 安装
 
 - 安装 CasaOS 需要检查当前的 docker 版本，如版本低于24.0.7需要卸载并更新，BM1684X docker更新方法[可看这里](#Docker-更新方法)
@@ -135,8 +136,8 @@
 ### 安装 radxa 一键启动大模型 Apps
 
 这里将介绍如何在 CasaOS 安装 radxa 大模型 App, CasaOS 中的第三方 App 以 docker image 的形式进行安装，
-上传到 CasaOS App store[可参考这里](https://github.com/IceWhaleTech/CasaOS-AppStore/tree/main)，
-radxa目前已将 `Stable Diffusion`, `whisper`, `chatdoc`, `imagesearch` 四个大模型App上传至 [docker hub](https://hub.docker.com/u/radxazifeng278)， 
+上传到 CasaOS App store [可参考这里](https://github.com/IceWhaleTech/CasaOS-AppStore/tree/main)，
+radxa 目前已将 `Stable Diffusion`, `whisper`, `chatdoc`, `imagesearch` 四个大模型App上传至 [docker hub](https://hub.docker.com/u/radxazifeng278)， 
 更多详细信息清参考 [App 构建方法](#App-构建方法)
 
 
@@ -291,7 +292,7 @@ radxa目前已将 `Stable Diffusion`, `whisper`, `chatdoc`, `imagesearch` 四个
 
 #### 安装 radxa chatdoc 文档聊天 App
 
-**安装 chatdoc 前必须参考[内存分布修改工具](内存分布修改工具.md) 修改BM1684X内存分配**
+**安装 chatdoc 前必须参考[内存分布修改工具](内存分布修改工具.md) 修改 1684X 内存分配**
 
 建议分配 -NPU 7168, -VPU 2048, -VPP 3072
 
@@ -336,6 +337,7 @@ radxa目前已将 `Stable Diffusion`, `whisper`, `chatdoc`, `imagesearch` 四个
   ```
 
 
+
 ### App 启动与卸载
 
 CasaOS 中 App 开启状态为 App 图标颜色高亮，关闭状态为 App 图标灰色状态
@@ -368,7 +370,7 @@ radxa 大模型 App image 是以 ubuntu20.04 为基础进行四层 layer 的方�
 
 在SDK base 中安装了必备的工具： libncurses5, libatomic1, kmod, python3, python3-pip, vim 
 
-并安装了 sophon SDK: libsophon-0.5.0, sophon-ffmpeg_0.7.1, sophon-opencv_0.7.1这三个deb 与 sophon-sail 和 tpu-perf 模块
+并安装了 sophon SDK: libsophon-0.5.0, sophon-ffmpeg_0.7.1, sophon-opencv_0.7.1 这三个 deb 与 sophon-sail 和 tpu-perf 模块
 
 ***Dockerfile***
 
@@ -395,7 +397,7 @@ RUN apt update && \
 #### App env 层
 
 App env 层基于 SDK base 镜像基础上添加 App 运行必须的环境，例如 python modules, 和一些特殊需要安装的 deb, 
-拆分此层的目的是后续 App 源码更新在环境不变的情况下减少安装速度，并且可通过App env + SDK base镜像外部挂载 App 源码和模型卷可直接启动服务，
+拆分此层的目的是后续 App 源码更新在环境不变的情况下减少安装速度，并且可通过 App env + SDK base 镜像外部挂载 App 源码和模型卷可直接启动服务，
 可在此层加入 CMD 默认启动 App 服务
 
   
